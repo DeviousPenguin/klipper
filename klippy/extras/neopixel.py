@@ -19,7 +19,7 @@ class PrinterNeoPixel:
                                 % (self.oid, pin_params['pin']))
         self.mcu.register_config_callback(self.build_config)
         self.color_order_GRB = config.getboolean("color_order_GRB", True)
-        self.chain_count = config.getint('chain_count', 1, minval=1, maxval=18)
+        self.chain_count = config.getint('chain_count', 1, minval=1, maxval=256)
         self.neopixel_send_cmd = None
         # Initial color
         red = config.getfloat('initial_RED', 0., minval=0., maxval=1.)
